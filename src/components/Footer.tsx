@@ -5,21 +5,21 @@ type Props = {}
 const Footer = (props: Props) => {
   return (
     <div className='pt-8 bg-gray-100'>
-      <div className='grid grid-cols-12 gap-3 p-4 pl-8'>
+      <div className='grid grid-cols-12 gap-3 p-4 pl-8 text-left'>
 
         <div className='col-span-4'>
-          <p className='pr-20 text-lg'><strong>Về chúng tôi</strong></p>
-          <div className='pl-8'><img src='https://theme.hstatic.net/200000066044/1000820067/14/logo-footer.png?v=98' width='200px' /></div>
+        <h1 className=''><strong>Về chúng tôi</strong></h1>
+          <div className=''><img src='https://theme.hstatic.net/200000066044/1000820067/14/logo-footer.png?v=98' width='200px' /></div>
           
           <p className='text-xl'><strong>MỸ PHẨM CHÍNH HÃNG NGOẠI NHẬP</strong></p>
           <div><span>Địa chỉ:</span> <span>Trường Cao đẳng FPT Polytecnic Hà Nội</span></div>
           <div><span>SĐT:</span> < span>0392697014</span></div>
           <span>Email:</span><span>thaovtpph16945@fpt.edu.vn</span>
-          <div className='grid grid-cols-2'>
+          <div className='grid grid-cols-4'>
             <div className='col-span-1'>
               <a href="https://www.facebook.com/profile.php?id=100069569706340"><img src='https://theme.hstatic.net/200000066044/1000820067/14/facebook.svg?v=98' width='30px'/></a>
             </div>
-            <div className='col-span-1'>
+            <div className='col-span-3'>
             <a href="https://www.facebook.com/profile.php?id=100069569706340"><img src='https://theme.hstatic.net/200000066044/1000820067/14/instagram.svg?v=98' width='30px'/></a>
             </div>
           </div>

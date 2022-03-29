@@ -7,6 +7,8 @@ import WebsiteLayout from './pages/layouts/Website/WebsiteLayout'
 import ListProduct from './components/ListProduct'
 import { ProductType } from './types/Product'
 import { list} from './api/product'
+import ProductDetail from './components/ProductDetail'
+import Banner from './components/Banner'
 function App() {
   const [listLoading, setlistLoading] = useState(false)
   const [products, setProducts] = useState<ProductType[]>([])
@@ -22,8 +24,10 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<WebsiteLayout />}  >
-           
-           <Route index element={<ListProduct products={products} />} />
+        <Route index element={<Banner  />} />
+        <Route path='/' element={<ListProduct products={products} />} />
+        <Route path='/product/:id' element={<ProductDetail />} />
+        <Route path='/signin' element />
         </Route>
 
 

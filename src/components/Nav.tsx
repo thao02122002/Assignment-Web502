@@ -26,7 +26,7 @@ const Nav = (props: Props) => {
                     <li><a className="dropdown-item text-lg" href="#">Set đồ trang điểm, dưỡng da</a></li>
                     <li><a className="dropdown-item text-lg" href="#">Thương hiệu</a></li>
                   </ul>
-                </li>
+                 </li>
                 <li className="nav-item">
                   <a className="nav-link text-white" href="#">Liên hệ</a>
                 </li>

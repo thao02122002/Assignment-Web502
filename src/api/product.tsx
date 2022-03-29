@@ -11,8 +11,8 @@ export const list = () => {
   return instance.get(url);
 }
 
-export const read = (_id: number) => {
-  const url = `/products/${_id}`;
+export const read = (id: string) => {
+  const url = `/products/${id}`;
   return instance.get(url);
 }
 
