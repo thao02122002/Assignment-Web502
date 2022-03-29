@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { read } from '../api/product';
-import { ProductType } from '../types/Product';
+import { read } from '../../../api/product';
+import { ProductType } from '../../../types/Product';
 
 type Props = {}
 

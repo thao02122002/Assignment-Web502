@@ -7,8 +7,10 @@ import WebsiteLayout from './pages/layouts/Website/WebsiteLayout'
 import ListProduct from './components/ListProduct'
 import { ProductType } from './types/Product'
 import { list} from './api/product'
-import ProductDetail from './components/ProductDetail'
+import ProductDetail from './pages/layouts/Website/ProductDetail'
 import Banner from './components/Banner'
+import Products from './pages/layouts/Website/Products'
+import Home from './pages/layouts/Website/Home'
 function App() {
   const [listLoading, setlistLoading] = useState(false)
   const [products, setProducts] = useState<ProductType[]>([])
@@ -24,9 +26,12 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<WebsiteLayout />}  >
-        <Route index element={<Banner  />} />
-        <Route path='/' element={<ListProduct products={products} />} />
+        <Route index element={<Home products={products} />} />
+        <Route path='/product'>
+          <Route index element={<Products products={products} />} />
         <Route path='/product/:id' element={<ProductDetail />} />
+        </Route>
+        
         <Route path='/signin' element />
         </Route>
 

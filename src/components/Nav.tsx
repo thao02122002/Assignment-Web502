@@ -9,14 +9,14 @@ const Nav = (props: Props) => {
 
     <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-xl   ">
                 <li className="nav-item">
-                  <a className="nav-link active text-white  " aria-current="page" href="">Trang chủ</a>
+                  <a className="nav-link active text-white  " aria-current="page" href="/">Trang chủ</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active text-white " aria-current="page" href="#">Giới thiệu</a>
+                  <a className="nav-link active text-white " aria-current="page" href="/introduce">Giới thiệu</a>
                 </li>
                 
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle text-white " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a className="nav-link dropdown-toggle text-white " href="/product" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Sản phẩm
                   </a>
                   <ul className="dropdown-menu text-white" aria-labelledby="navbarDropdown">
@@ -28,7 +28,7 @@ const Nav = (props: Props) => {
                   </ul>
                  </li>
                 <li className="nav-item">
-                  <a className="nav-link text-white" href="#">Liên hệ</a>
+                  <a className="nav-link text-white" href="/contact">Liên hệ</a>
                 </li>
               </ul>
 
