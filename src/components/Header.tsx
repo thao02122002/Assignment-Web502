@@ -25,8 +25,9 @@ const Header = (props: Props) => {
               </div>
               <div className='col-span-3 text-left'>
                 <p className='hover:text-pink-400'>Tài khoản</p>
-                <p className='hover:text-pink-400'>Đăng kí</p>
-                <p className='hover:text-pink-400'>Đăng nhập</p>
+                <a className='' href="/signup"><p className='hover:text-pink-400'>Đăng kí</p></a> 
+                <a href="/signin"><p className='hover:text-pink-400'>Đăng nhập</p></a> 
+
               </div>
             </div>
 

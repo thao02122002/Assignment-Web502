@@ -11,9 +11,7 @@ const Nav = (props: Props) => {
                 <li className="nav-item">
                   <a className="nav-link active text-white  " aria-current="page" href="/">Trang chủ</a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link active text-white " aria-current="page" href="/introduce">Giới thiệu</a>
-                </li>
+                
                 
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle text-white " href="/product" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

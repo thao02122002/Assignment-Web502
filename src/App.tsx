@@ -11,6 +11,8 @@ import ProductDetail from './pages/layouts/Website/ProductDetail'
 import Banner from './components/Banner'
 import Products from './pages/layouts/Website/Products'
 import Home from './pages/layouts/Website/Home'
+import SignUp from './pages/layouts/Website/SignUp'
+import SignIn from './pages/layouts/Website/SignIn'
 function App() {
   const [listLoading, setlistLoading] = useState(false)
   const [products, setProducts] = useState<ProductType[]>([])
@@ -32,7 +34,9 @@ function App() {
         <Route path='/product/:id' element={<ProductDetail />} />
         </Route>
         
-        <Route path='/signin' element />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/signin' element={<SignIn />} />
+
         </Route>
 
 
