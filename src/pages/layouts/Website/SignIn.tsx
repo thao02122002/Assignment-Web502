@@ -1,8 +1,22 @@
 import React from 'react'
+import {useForm, SubmitHandler} from "react-hook-form"
+import {useNavigate} from "react-router-dom"
+import { signin } from '../../../api/user'
 
-type Props = {}
 
-const SignIn = (props: Props) => {
+type FormInputs = {
+  email: string,
+  password: string
+}
+
+const SignIn = () => {
+  const { register, handleSubmit, formState: {errors}} = useForm<FormInputs>();
+  const navigate = useNavigate()
+  const onSubmit: SubmitHandler<FormInputs> = async data => {
+    const {data: user} = await signin(data)
+    
+    navigate("/");
+  }
   return (
     <div>
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -12,7 +26,7 @@ const SignIn = (props: Props) => {
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Đăng nhập tài khoản</h2>
             
           </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
+          <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm -space-y-px">
               
@@ -21,12 +35,12 @@ const SignIn = (props: Props) => {
 
               <div className='py-2'>
                 <label htmlFor="email-address" className="sr-only">Email address</label>
-                <input id="email-address" name="email" type="email" autoComplete="email" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address" />
+                <input id="email-address"  type="email" {...register('email')} autoComplete="email" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address" />
               </div>
 
               <div>
                 <label htmlFor="password" className="sr-only">Password</label>
-                <input id="password" name="password" type="password" autoComplete="current-password" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password" />
+                <input id="password"  type="password" {...register('password')} autoComplete="current-password" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password" />
               </div>
             </div>
             <div className="flex items-center justify-between">
@@ -52,6 +66,8 @@ const SignIn = (props: Props) => {
           </form>
         </div>
       </div>
+
+
     </div>
   )
 }
