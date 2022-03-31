@@ -13,6 +13,7 @@ import Products from './pages/layouts/Website/Products'
 import Home from './pages/layouts/Website/Home'
 import SignUp from './pages/layouts/Website/SignUp'
 import SignIn from './pages/layouts/Website/SignIn'
+import New from './pages/layouts/Website/New'
 function App() {
   const [listLoading, setlistLoading] = useState(false)
   const [products, setProducts] = useState<ProductType[]>([])
