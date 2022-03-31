@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import WebsiteLayout from './pages/layouts/Website/WebsiteLayout'
 import ListProduct from './components/ListProduct'
 import { ProductType } from './types/Product'
-import { list} from './api/product'
+import { create, list} from './api/product'
 import ProductDetail from './pages/layouts/Website/ProductDetail'
 import Banner from './components/Banner'
 import Products from './pages/layouts/Website/Products'
@@ -17,6 +17,7 @@ import New from './pages/layouts/Website/New'
 import AdminLayout from './pages/layouts/Admin/AdminLayout'
 import Dashboard from './pages/layouts/Admin/Dashboard'
 import ProductList from './pages/layouts/Admin/ProductList'
+import ProductAdd from './pages/layouts/Admin/ProductAdd'
 function App() {
   const [listLoading, setlistLoading] = useState(false)
   const [products, setProducts] = useState<ProductType[]>([])
@@ -27,6 +28,11 @@ function App() {
      }
      getProduct();
   },[])
+
+  const onHandleAdd = async (product: any) => {
+    const {data} = await create(product)
+    setProducts([...products, data])
+  }
 
   return (
     <div className="App">
@@ -48,6 +54,8 @@ function App() {
             <Route path='dashboard' element={<Dashboard />} />
             <Route path='product'>
                  <Route index element={<ProductList products={products} />} />
+                 <Route path='/admin/product/:id/edit' element />
+                 <Route path='add' element={<ProductAdd onAdd={onHandleAdd} />} />
             </Route>
         </Route>
 
