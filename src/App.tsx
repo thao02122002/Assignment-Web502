@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import WebsiteLayout from './pages/layouts/Website/WebsiteLayout'
 import ListProduct from './components/ListProduct'
 import { ProductType } from './types/Product'
-import { create, list, update} from './api/product'
+import { create, list, remove, update} from './api/product'
 import ProductDetail from './pages/layouts/Website/ProductDetail'
 import Banner from './components/Banner'
 import Products from './pages/layouts/Website/Products'
@@ -45,6 +45,11 @@ function App() {
     }
   }
 
+  const onHandleRemove = async (id: number) => {
+    remove(id);
+    setProducts(products.filter(item => item._id !== id));
+  }
+
   return (
     <div className="App">
       <Routes>
@@ -63,7 +68,7 @@ function App() {
         <Route path='admin' element={<AdminLayout />}>
             <Route index element={<Dashboard />} />
             <Route path='product'>
-                 <Route index element={<ProductList products={products} />} />
+                 <Route index element={<ProductList products={products} onRemove={onHandleRemove} />} />
                  <Route path='/admin/product/:id/edit' element={<ProductEdit onUpdate={onHandleUpdate} />} />
                  <Route path='add' element={<ProductAdd onAdd={onHandleAdd} />} />
             </Route>

@@ -4,7 +4,8 @@ import {ProductType} from "../../../types/Product"
 
 
 type ProductListProps = {
-  products: ProductType[]
+  products: ProductType[];
+  onRemove: (id: number) => void
   
 }
 
@@ -23,7 +24,7 @@ const ProductList = (props: ProductListProps) => {
               <td>{item.descriptionDetail}</td>
               <td>
                 <Link to={`/admin/product/${item._id}/edit`}>Edit</Link>
-                <button>Remove</button>
+                <button onClick={() => props.onRemove(item._id)}>Remove</button>
               </td>
 
             </tr>
