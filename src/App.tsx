@@ -19,6 +19,7 @@ import Dashboard from './pages/layouts/Admin/Dashboard'
 import ProductList from './pages/layouts/Admin/ProductList'
 import ProductAdd from './pages/layouts/Admin/ProductAdd'
 import ProductEdit from './pages/layouts/Admin/ProductEdit'
+import PrivateRouter from './components/PrivateRouter'
 function App() {
   const [listLoading, setlistLoading] = useState(false)
   const [products, setProducts] = useState<ProductType[]>([])
@@ -65,8 +66,8 @@ function App() {
 
         </Route>
 
-        <Route path='admin' element={<AdminLayout />}>
-            <Route index element={<Dashboard />} />
+        <Route path='admin' element={<AdminLayout /> }>
+            {/* <Route index element={<Dashboard />} /> */}
             <Route path='product'>
                  <Route index element={<ProductList products={products} onRemove={onHandleRemove} />} />
                  <Route path='/admin/product/:id/edit' element={<ProductEdit onUpdate={onHandleUpdate} />} />
