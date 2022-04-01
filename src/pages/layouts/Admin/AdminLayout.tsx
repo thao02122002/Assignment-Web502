@@ -12,7 +12,9 @@ const AdminLayout = (props: Props) => {
         <div className='col-span-2'>
           <Dashboard />
         </div>
-        <div className='col-span-10 grid grid-cols-10'>
+        
+        <div className='col-span-10 '>
+          <div className='grid grid-cols-10 pt-4'>
           <div className='col-span-5'>
             <form>
               <div className='grid grid-cols-5'>
@@ -31,13 +33,19 @@ const AdminLayout = (props: Props) => {
           <div className='col-span-5'>
             <h2>Xin chào</h2>
           </div>
-          <Outlet />
+          </div>
+          <div className="h-0.5 bg-pink-400 w-full my-5"> </div>
+          
+          
+          
 
-
+          <div className='pt-4'>
+            <Outlet /></div>
         </div>
        
-
+        
       </div>
+      
     </div>
 
   )

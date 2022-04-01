@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
@@ -33,7 +34,7 @@ const Dashboard = (props: Props) => {
             </svg>
             </div>
             <div className='col-span-3 text-left'>
-              <a className='no-underline text-white text-3xl' href="/admin/product">Sản phẩm</a>
+              <Link className='no-underline text-white text-3xl' to="/admin/product">Sản phẩm</Link>
               </div>
           </li>
 
@@ -41,7 +42,7 @@ const Dashboard = (props: Props) => {
             <div className='col-span-1 pl-12 pt-2'><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
             </svg></div>
-            <div className='col-span-3 text-left'><a className='no-underline text-white text-3xl' href="/admin/new">Bài viết</a></div>
+            <div className='col-span-3 text-left'><Link className='no-underline text-white text-3xl' to="/admin/new">Bài viết</Link></div>
 
           </li>
 
@@ -52,7 +53,7 @@ const Dashboard = (props: Props) => {
               </svg>
             </div>
             <div className='col-span-3 text-left'>
-              <a className='no-underline text-white text-3xl' href="/admin/user">Tài khoản</a>
+              <Link className='no-underline text-white text-3xl' to="/admin/user">Tài khoản</Link>
             </div>
 
           </li>
@@ -64,7 +65,7 @@ const Dashboard = (props: Props) => {
               </svg>
             </div>
             <div className='col-span-3 text-left'>
-              <a className='no-underline text-white text-3xl' href="/admin/cart">Giỏ hàng</a>
+              <Link className='no-underline text-white text-3xl' to="/admin/cart">Giỏ hàng</Link>
             </div>
 
           </li>
