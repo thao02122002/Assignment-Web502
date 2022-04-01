@@ -8,9 +8,7 @@ type ProductListProps = {
 const ListProduct = ({ products }: ProductListProps) => {
   return (
     <div className='p-4' >
-      <div className='py-8 '>
-      <div className='border border-pink-400 bg-pink-400'>
-        <div className='py-2 px-8'>
+     
           <div className='border border-white bg-white  rounded-lg'>
             <p className='text-xl text-left hover:text-pink-400 font-bold'><strong>ƯU ĐÃI HOT, ĐỪNG BỎ LỠ!!</strong></p>
             <p className='text-lg text-left text-gray-500'>Nhanh tay đặt ngay kẻo lỡ</p>
@@ -40,13 +38,7 @@ const ListProduct = ({ products }: ProductListProps) => {
           </div>
          
         </div>
-      </div>
-
-    </div>
-
-   
-    </div>
-    
+      
   )
 }
 

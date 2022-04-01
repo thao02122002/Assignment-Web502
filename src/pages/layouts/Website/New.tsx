@@ -5,7 +5,7 @@ type Props = {}
 const New = (props: Props) => {
   return (
     <div>
-     <div className="py-4">
+     <div className="p-4">
     <h1 className="text-left hover:text-pink-400">THƯƠNG HIỆU NỔI BẬT</h1>
     <div className="grid grid-cols-10 gap-2">
       <div className="col-span-2">
@@ -25,10 +25,10 @@ const New = (props: Props) => {
       </div>
     </div>
   </div>
-  <div>
+  <div className='px-4'>
     <img src="https://theme.hstatic.net/200000066044/1000820067/14/section_hot_banner.png?v=98" width="100%" />
   </div>
-  <div className="py-4 ">
+  <div className="p-4 ">
     <h1 className="text-left hover:text-pink-400">TIN TỨC</h1>
     <div className="grid grid-cols-12 gap-3 pt-4">
       <div className="col-span-3">

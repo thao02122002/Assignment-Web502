@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import ListProduct from '../../../components/ListProduct'
 import { ProductType } from '../../../types/Product'
 
@@ -13,10 +14,14 @@ const Products = (props: ProductsProps) => {
         <div className='col-span-4 pl-8 pt-12'>
           <div className='text-left'>
             <h2>DANH MỤC</h2>
-           <a className='decoration-none' href="">dnknhugf</a> 
-            <a href="">dnknhugf</a>
-            <a href="">dnknhugf</a>
-            <a href="">dnknhugf</a>
+            <ul className='inline  '>
+              <li><Link className='no-underline text-black' to="">dnknhugf</Link> </li>
+              <li><Link className='no-underline text-black' to="">dnknhugf</Link> </li>
+              <li><Link className='no-underline text-black' to="">dnknhugf</Link> </li>
+              <li><Link className='no-underline text-black' to="">dnknhugf</Link> </li>
+            </ul>
+           
+            
           </div>
           <div className='text-left py-4'>
           <h2>MỨC GIÁ</h2>

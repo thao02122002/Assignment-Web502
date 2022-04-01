@@ -7,7 +7,8 @@ const Dashboard = (props: Props) => {
   return (
     <div className='bg-pink-400 h-screen'>
       <div>
-        <img src='https://theme.hstatic.net/200000066044/1000820067/14/logo.png?v=100' width='300px' />
+        <Link to='/admin'><img src='https://theme.hstatic.net/200000066044/1000820067/14/logo.png?v=100' width='300px' /></Link>
+        
       </div>
       <nav>
         <ul className='inline  '>
