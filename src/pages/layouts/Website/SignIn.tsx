@@ -14,6 +14,7 @@ const SignIn = () => {
   const navigate = useNavigate()
   const onSubmit: SubmitHandler<FormInputs> = async data => {
     const {data: user} = await signin(data)
+    localStorage.setItem("user", JSON.stringify(user))
     
     navigate("/");
   }

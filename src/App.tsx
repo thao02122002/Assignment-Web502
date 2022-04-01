@@ -31,7 +31,7 @@ function App() {
      getProduct();
   },[])
 
-  const onHandleAdd = async (product: any) => {
+  const onHandleAdd = async (product: ProductType) => {
     const {data} = await create(product)
     setProducts([...products, data])
   }
@@ -66,7 +66,7 @@ function App() {
 
         </Route>
 
-        <Route path='admin' element={<AdminLayout /> }>
+        <Route path='admin' element={<PrivateRouter><AdminLayout /></PrivateRouter> }>
             {/* <Route index element={<Dashboard />} /> */}
             <Route path='product'>
                  <Route index element={<ProductList products={products} onRemove={onHandleRemove} />} />

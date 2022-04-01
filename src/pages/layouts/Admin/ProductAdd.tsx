@@ -18,6 +18,8 @@ const ProductAdd = (props: ProductAddProps) => {
   const navigate = useNavigate()
   const onSubmit: SubmitHandler<Inputs> = data => {
     props.onAdd(data)
+    console.log(data);
+    
     navigate("/admin/product")
   }
   return (
@@ -50,7 +52,7 @@ const ProductAdd = (props: ProductAddProps) => {
                       NAME
                     </label>
                     <div className="mt-1">
-                      <input id="desc-post" {...register('name')} name="about" className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" defaultValue={""} />
+                      <input type="text" {...register('name')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"  />
                     </div>
                   </div>
                   <div>
@@ -58,7 +60,7 @@ const ProductAdd = (props: ProductAddProps) => {
                       PRICE
                     </label>
                     <div className="mt-1">
-                      <input id="desc-post"  {...register('price')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" defaultValue={""} />
+                      <input id="desc-post"  {...register('price')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"  />
                     </div>
                   </div>
                   <div>
@@ -66,7 +68,7 @@ const ProductAdd = (props: ProductAddProps) => {
                       QUANTITY
                     </label>
                     <div className="mt-1">
-                      <input id="desc-post"  {...register('quantity')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" defaultValue={""} />
+                      <input id="desc-post"  {...register('quantity')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"  />
                     </div>
                   </div>
                   <div>
@@ -74,7 +76,7 @@ const ProductAdd = (props: ProductAddProps) => {
                       DESCRIPTION
                     </label>
                     <div className="mt-1">
-                      <input id="desc-post"  {...register('description')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" defaultValue={""} />
+                      <input id="desc-post"  {...register('description')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"  />
                     </div>
                   </div>
                   <div>
@@ -82,7 +84,7 @@ const ProductAdd = (props: ProductAddProps) => {
                       DESCRIPTIONDETAIL
                     </label>
                     <div className="mt-1">
-                      <input id="desc-post" {...register('descriptionDetail')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" defaultValue={""} />
+                      <input id="desc-post" {...register('descriptionDetail')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"  />
                     </div>
                   </div>
 

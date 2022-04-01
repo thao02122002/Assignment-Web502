@@ -67,7 +67,7 @@ const ProductList = (props: ProductListProps) => {
             {item.descriptionDetail}
             </td>
             <td className="px-6 py-4 whitespace-nowrap  text-sm font-medium">
-              <Link to={`/admin/product/${item._id}/edit`} className=""><button className='border border-green-400 bg-green-400 text-white p-2 rounded-full'>Edit</button></Link>/<Link to="" className=""><button onClick={() => props.onRemove(item._id)} className="border border-red-600 bg-red-600 text-white rounded-full p-2">Dell</button></Link>
+              <Link to={`/admin/product/${item._id}/edit`} className=""><button className='border border-green-400 bg-green-400 text-white p-2 rounded-full'>Edit</button></Link>/<Link to="" className=""><button onClick={() => props.onRemove(item._id)} className="border border-red-600 bg-red-600 text-white rounded-full p-2">Dele</button></Link>
             </td>
           </tr>
           })}

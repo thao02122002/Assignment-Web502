@@ -1,9 +1,15 @@
 import { ProductType } from "../types/Product";
 import instance from './instance';
+import { isAuthenticate } from "../utils/localStorage";
+const user = isAuthenticate();
 
 export const create = (product: ProductType) => {
-  const url = `/products`;
-  return instance.post(url, product);
+  const url = `/products/${user?.user._id}`;
+  return instance.post(url, product, {
+    headers: {
+      "Authorization": `Bearer ${user?.token}`
+    }
+  });
 }
 
 export const list = () => {
