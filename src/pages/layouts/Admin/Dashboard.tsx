@@ -19,9 +19,9 @@ const Dashboard = (props: Props) => {
               </svg>
             </div>
             <div className='col-span-3 text-left'>
-              <a className='no-underline text-white text-3xl' href="/admin/category">
+              <Link className='no-underline text-white text-3xl' to="/admin/category">
                 Danh mục
-              </a>
+              </Link>
             </div>
 
 
@@ -66,7 +66,7 @@ const Dashboard = (props: Props) => {
               </svg>
             </div>
             <div className='col-span-3 text-left'>
-              <Link className='no-underline text-white text-3xl' to="/admin/cart">Giỏ hàng</Link>
+              <Link className='no-underline text-white text-3xl' to="/admin/cart">Đơn hàng</Link>
             </div>
 
           </li>

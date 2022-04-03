@@ -16,11 +16,12 @@ import SignIn from './pages/layouts/Website/SignIn'
 import New from './pages/layouts/Website/New'
 import AdminLayout from './pages/layouts/Admin/AdminLayout'
 import Dashboard from './pages/layouts/Admin/Dashboard'
-import ProductList from './pages/layouts/Admin/ProductList'
-import ProductAdd from './pages/layouts/Admin/ProductAdd'
-import ProductEdit from './pages/layouts/Admin/ProductEdit'
+import ProductList from './pages/layouts/Admin/Product/ProductList'
+import ProductAdd from './pages/layouts/Admin/Product/ProductAdd'
+import ProductEdit from './pages/layouts/Admin/Product/ProductEdit'
 import PrivateRouter from './components/PrivateRouter'
 import Contact from './pages/layouts/Website/Contact'
+import Statistical from './pages/layouts/Admin/Statistical'
 function App() {
   const [listLoading, setlistLoading] = useState(false)
   const [products, setProducts] = useState<ProductType[]>([])
@@ -69,6 +70,7 @@ function App() {
         </Route>
 
         <Route path='admin' element={<PrivateRouter><AdminLayout /></PrivateRouter> }>
+          <Route index element={<Statistical />} />
             {/* <Route index element={<Dashboard />} /> */}
             <Route path='product'>
                  <Route index element={<ProductList products={products} onRemove={onHandleRemove} />} />

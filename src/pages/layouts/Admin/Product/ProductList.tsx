@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {ProductType} from "../../../types/Product"
+import {ProductType} from "../../../../types/Product"
 
 
 type ProductListProps = {

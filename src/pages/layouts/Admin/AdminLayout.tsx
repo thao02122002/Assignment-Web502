@@ -39,7 +39,7 @@ const AdminLayout = (props: Props) => {
           
           
 
-          <div className='pt-4'>
+          <div className='pt-4 px-4'>
             <Outlet /></div>
         </div>
        
