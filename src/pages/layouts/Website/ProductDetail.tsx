@@ -19,8 +19,8 @@ const ProductDetail = (props: Props) => {
   return (
     <div className='px-4'>
       <div className='grid grid-cols-12 gap-2'>
-        <div className='col-span-6'>
-          <img src='https://product.hstatic.net/200000066044/product/biotin-collagen-conditioner-thick-_-full-1_427ebeb1be224865a31095c86ae59022_large.jpg' width='500px' />
+        <div className='col-span-6 overflow-hidden'>
+          <img className='transition-transform duration-500 transform hover:scale-75 ' src='https://product.hstatic.net/200000066044/product/biotin-collagen-conditioner-thick-_-full-1_427ebeb1be224865a31095c86ae59022_large.jpg' width='500px' />
         </div>
         <div className='col-span-6 text-left my-auto'>
           <h1 className='text-gray-500'>{product?.name}</h1>
@@ -42,8 +42,8 @@ const ProductDetail = (props: Props) => {
         <h1 className='text-left'>SẢN PHẨM CÙNG LOẠI</h1>
         <div className='grid grid-cols-12 gap-2'>
         <div className='col-span-2 p-4 hover:border-pink-400'>
-                  <div>
-                    <img src='https://product.hstatic.net/200000066044/product/biotin-collagen-conditioner-thick-_-full-1_427ebeb1be224865a31095c86ae59022_large.jpg' width='200px' />
+                  <div className='overflow-hidden'>
+                    <img className='transition-transform duration-500 transform hover:scale-75 ' src='https://product.hstatic.net/200000066044/product/biotin-collagen-conditioner-thick-_-full-1_427ebeb1be224865a31095c86ae59022_large.jpg' width='300px' />
                   </div>
                   <div className='text-left'>
                     <p className='text-gray-500'>iwjslmdasw</p>

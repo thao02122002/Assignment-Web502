@@ -25,8 +25,8 @@ const New = (props: Props) => {
       </div>
     </div>
   </div>
-  <div className='px-4'>
-    <img src="https://theme.hstatic.net/200000066044/1000820067/14/section_hot_banner.png?v=98" width="100%" />
+  <div className='px-4 overflow-hidden'>
+    <img className='transition-transform duration-500 transform hover:scale-90 ' src="https://theme.hstatic.net/200000066044/1000820067/14/section_hot_banner.png?v=98" width="100%" />
   </div>
   <div className="p-4 ">
     <h1 className="text-left hover:text-pink-400">TIN TỨC</h1>
