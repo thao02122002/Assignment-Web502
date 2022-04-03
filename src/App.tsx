@@ -20,6 +20,7 @@ import ProductList from './pages/layouts/Admin/ProductList'
 import ProductAdd from './pages/layouts/Admin/ProductAdd'
 import ProductEdit from './pages/layouts/Admin/ProductEdit'
 import PrivateRouter from './components/PrivateRouter'
+import Contact from './pages/layouts/Website/Contact'
 function App() {
   const [listLoading, setlistLoading] = useState(false)
   const [products, setProducts] = useState<ProductType[]>([])
@@ -63,6 +64,7 @@ function App() {
         
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signin' element={<SignIn />} />
+        <Route path='/contact' element={<Contact />} />
 
         </Route>
 
