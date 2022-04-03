@@ -1,6 +1,7 @@
 import React from 'react'
 import Search from './Search'
 import "bootstrap/dist/css/bootstrap.min.css"
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
@@ -14,9 +15,9 @@ const Nav = (props: Props) => {
                 
                 
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle text-white " href="/product" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <Link className="nav-link dropdown-toggle text-white " to="/product" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Sản phẩm
-                  </a>
+                  </Link>
                   <ul className="dropdown-menu text-white" aria-labelledby="navbarDropdown">
                     <li><a className="dropdown-item text-lg" href="#">Dưỡng da</a></li>
                     <li><a className="dropdown-item  text-lg" href="#">Trang điểm</a></li>
