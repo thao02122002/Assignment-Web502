@@ -13,9 +13,9 @@ const ListProduct = ({ products }: ProductListProps) => {
           <div className='border border-white bg-white  rounded-lg'>
             <p className='text-xl text-left hover:text-pink-400 font-bold'><strong>ƯU ĐÃI HOT, ĐỪNG BỎ LỠ!!</strong></p>
             <p className='text-lg text-left text-gray-500'>Nhanh tay đặt ngay kẻo lỡ</p>
-            <div className='grid grid-cols-10 gap-2'>
+            <div className='grid grid-cols-10 gap-3'>
             {products.map(product => {
-              return <div className='col-span-2 p-4 hover:border-pink-400'>
+              return <div className='col-span-2 p-4 hover:border hover:border-gray-200 hover:shadow-xl rounded-lg '>
                   <div className='overflow-hidden'>
                     <img className='transition-transform duration-500 transform hover:scale-75 ' src='https://product.hstatic.net/200000066044/product/biotin-collagen-conditioner-thick-_-full-1_427ebeb1be224865a31095c86ae59022_large.jpg' width='300px' />
                   </div>
