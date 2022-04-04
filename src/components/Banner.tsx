@@ -2,6 +2,7 @@ import React from 'react'
 // import 'react-slideshow-image/dist/styles.css'
 // import { Slide } from "react-slideshow-image"
 // import { Zoom } from 'react-slideshow-image'
+// import { Zoom } from 'react-slideshow-image'
 
 type Props = {}
 

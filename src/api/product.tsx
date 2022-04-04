@@ -32,6 +32,10 @@ export const remove = (_id: number) => {
 }
 
 export const update = (product: any) => {
-  const url = `/products/${product._id}`;
-  return instance.put(url, product);
+  const url = `/products/${user?.user._id}/${product._id}`;
+  return instance.put(url, product,{
+    headers: {
+      "Authorization": `Bearer ${user?.token}`
+    }
+  });
 }
