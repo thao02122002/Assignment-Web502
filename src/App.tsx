@@ -26,10 +26,14 @@ import Contact from './pages/layouts/Website/Contact'
 import Statistical from './pages/layouts/Admin/Statistical'
 import { CategoryType } from './types/Category'
 import CategoryList from './pages/layouts/Admin/Category/CategoryList'
+import { ListUser } from './api/user'
+import { UserType } from './types/user'
+import UserList from './pages/layouts/Admin/User/UserList'
 function App() {
   const [listLoading, setlistLoading] = useState(false)
   const [products, setProducts] = useState<ProductType[]>([])
   const [categories, setCategories] = useState<CategoryType[]>([])
+  const [users, setUsers] = useState<UserType[]>([])
   useEffect(() => {
      const getProduct = async () => {
        const {data} = await list();
@@ -65,6 +69,13 @@ function App() {
     }
     getCategory();
  },[])
+ useEffect(() => {
+  const getUser = async () => {
+    const {data} = await ListUser();
+    setUsers(data)
+  }
+  getUser();
+},[])
   return (
     <div className="App">
       <Routes>
@@ -91,6 +102,9 @@ function App() {
             </Route>
             <Route path='category' >
               <Route index element={<CategoryList categories={categories} />}/>
+            </Route>
+            <Route path='user' >
+              <Route index element={<UserList users={users} />}/>
             </Route>
         </Route>
 
