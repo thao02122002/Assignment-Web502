@@ -2,6 +2,7 @@ import React from 'react'
 import Search from './Search'
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Link } from 'react-router-dom'
+import {isAuthenticate} from "../utils/localStorage"
 
 type Props = {}
 
@@ -28,6 +29,11 @@ const Nav = (props: Props) => {
                  </li>
                 <li className="nav-item">
                   <a className="nav-link text-white" href="/contact">Liên hệ</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link text-white" href="">
+                    
+                  </a>
                 </li>
               </ul>
 

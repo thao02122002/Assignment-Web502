@@ -1,13 +1,26 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {useForm, SubmitHandler} from "react-hook-form"
+import {useNavigate} from "react-router-dom"
+import { search } from '../api/product'
 
-type Props = {}
 
-const Search = (props: Props) => {
+type Inputs = {
+  name: string
+}
+
+
+const Search = () => {
+  const {register, handleSubmit, formState: {errors}} = useForm<Inputs>()
+  const navigate = useNavigate()
+  const onSubmit: SubmitHandler<Inputs> = data => {
+    search(data)
+    navigate("/product")
+  }
   return (
     <div className="d-flex">
-      <form className="d-flex">
-    <input className="form-control me-2 rounded-lg" type="search" placeholder="Search" aria-label="Search" />
+      <form action='' onSubmit={handleSubmit(onSubmit)} className="d-flex">
+    <input {...register('name')} className="form-control me-2 rounded-lg" type="search" placeholder="Search" aria-label="Search" />
     <button className="p-2 border border-yellow-500 bg-yellow-500 rounded-lg hover:bg-yellow-300" type="submit">Search</button>
   </form>
   <div className='my-auto'>

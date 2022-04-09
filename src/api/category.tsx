@@ -21,8 +21,8 @@ export const List = () => {
 }
 
 // lấy ra 1 sp
-export const Read = (id: string) => {
-  const url = `/category/${id}`
+export const Read = (_id: string) => {
+  const url = `/category/${_id}`
   return instance.get(url)
 }
 

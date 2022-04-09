@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { read } from '../../../api/product';
+import { CategoryType } from '../../../types/Category';
 import { ProductType } from '../../../types/Product';
 
-type Props = {}
+type Props = {
+  
+}
 
 const ProductDetail = (props: Props) => {
   const {id} = useParams();
@@ -24,7 +27,7 @@ const ProductDetail = (props: Props) => {
         </div>
         <div className='col-span-6 text-left my-auto'>
           <h1 className='text-gray-500'>{product?.name}</h1>
-          
+          <h1 className='text-gray-500'>{product?.category}</h1>
           <p className='text-red-600 text-4xl font-semibold'>{product?.price}đ</p>
           <form>
             Số lượng: <input className='border border-gray-300 rounded-full' type='text' placeholder='-' /> 1 <input type='text' placeholder='+' />

@@ -1,10 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import ListProduct from '../../../components/ListProduct'
+import { CategoryType } from '../../../types/Category'
 import { ProductType } from '../../../types/Product'
 
 type ProductsProps = {
   products: ProductType[]
+}
+type CategoriesProps = {
+  categories: CategoryType[]
 }
 
 const Products = (props: ProductsProps) => {

@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 import {CategoryType} from "../types/Category"
 
 type CategoryListProps = {
-  categories : CategoryType[]
+  categories : CategoryType[],
 }
 
 const ListCategory = ({ categories}: CategoryListProps) => {
-  return (
+  return  (
     <div className='text-left'>
     <h2>DANH MỤC</h2>
     <ul className='inline  '>
@@ -23,6 +23,7 @@ const ListCategory = ({ categories}: CategoryListProps) => {
     
   </div>
   )
+  
 }
 
 export default ListCategory

@@ -39,3 +39,8 @@ export const update = (product: any) => {
     }
   });
 }
+
+export const search = (product:ProductType) => {
+    const url = `/search`;
+    return instance.post(url,product)
+}

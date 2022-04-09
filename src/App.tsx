@@ -29,6 +29,8 @@ import CategoryList from './pages/layouts/Admin/Category/CategoryList'
 import { ListUser } from './api/user'
 import { UserType } from './types/user'
 import UserList from './pages/layouts/Admin/User/UserList'
+import ListCategory from './components/ListCategory'
+import CategoryDetail from './pages/layouts/Website/CategoryDetail'
 function App() {
   const [listLoading, setlistLoading] = useState(false)
   const [products, setProducts] = useState<ProductType[]>([])
@@ -83,8 +85,12 @@ function App() {
         <Route index element={<Home products={products} />} />
         <Route path='/product'>
           <Route index element={<Products products={products} />} />
+          {/* <Route path='' element={<ListCategory categories={categories} />} /> */}
         <Route path='/product/:id' element={<ProductDetail />} />
         </Route>
+        <Route path='/category/:id' element={<CategoryDetail />} />
+
+        
         
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signin' element={<SignIn />} />
