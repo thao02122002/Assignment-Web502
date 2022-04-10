@@ -1,6 +1,9 @@
 import React from 'react'
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
+import { useState, useEffect } from 'react'
+import { CategoryType } from '../../../../types/Category'
+import { List } from '../../../../api/category'
 
 type Inputs = {
   name: string,
@@ -20,9 +23,17 @@ const ProductAdd = (props: ProductAddProps) => {
   const onSubmit: SubmitHandler<Inputs> = data => {
     props.onAdd(data)
     console.log(data);
-    
+
     navigate("/admin/product")
   }
+  const [categories, setCategories] = useState<CategoryType[]>([])
+  useEffect(() => {
+    const getCategories = async () => {
+      const { data } = await List()
+      setCategories(data)
+    }
+    getCategories()
+  }, [])
   return (
 
     //     <form onSubmit={handleSubmit(onSubmit)}>
@@ -46,14 +57,14 @@ const ProductAdd = (props: ProductAddProps) => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="shadow sm:rounded-md sm:overflow-hidden">
                 <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
-                  
+
 
                   <div>
                     <label htmlFor="about" className="block text-sm font-medium text-gray-700">
                       NAME
                     </label>
                     <div className="mt-1">
-                      <input type="text" {...register('name')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"  />
+                      <input type="text" {...register('name')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" />
                     </div>
                   </div>
                   <div>
@@ -61,7 +72,7 @@ const ProductAdd = (props: ProductAddProps) => {
                       PRICE
                     </label>
                     <div className="mt-1">
-                      <input id="desc-post"  {...register('price')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"  />
+                      <input id="desc-post"  {...register('price')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" />
                     </div>
                   </div>
                   <div>
@@ -69,7 +80,7 @@ const ProductAdd = (props: ProductAddProps) => {
                       QUANTITY
                     </label>
                     <div className="mt-1">
-                      <input id="desc-post"  {...register('quantity')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"  />
+                      <input id="desc-post"  {...register('quantity')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" />
                     </div>
                   </div>
                   <div>
@@ -77,7 +88,7 @@ const ProductAdd = (props: ProductAddProps) => {
                       DESCRIPTION
                     </label>
                     <div className="mt-1">
-                      <input id="desc-post"  {...register('description')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"  />
+                      <input id="desc-post"  {...register('description')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" />
                     </div>
                   </div>
                   <div>
@@ -85,16 +96,22 @@ const ProductAdd = (props: ProductAddProps) => {
                       DESCRIPTIONDETAIL
                     </label>
                     <div className="mt-1">
-                      <input id="desc-post" {...register('descriptionDetail')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"  />
+                      <input id="desc-post" {...register('descriptionDetail')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="about" className="block text-sm font-medium text-gray-700">
-                      CATEGORY
-                    </label>
-                    <div className="mt-1">
-                      <input id="cate-post" {...register('category')} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"  />
+                    <div className="col-span-6 sm:col-span-3">
+                      <label htmlFor="country" className="block text-sm font-medium text-gray-700">CATEGORY</label>
+                      <select id="country" name="country" autoComplete="country-name" className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                      {categories.map(category => (
+                        <option >{category.name}</option>
+                      ))}
+                        {/* <option>United States</option>
+                        <option>Canada</option>
+                        <option>Mexico</option> */}
+                      </select>
                     </div>
+
                   </div>
 
                   <div className="px-4 py-3 text-right sm:px-6">
