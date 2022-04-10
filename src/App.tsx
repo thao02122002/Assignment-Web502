@@ -31,6 +31,7 @@ import { UserType } from './types/user'
 import UserList from './pages/layouts/Admin/User/UserList'
 import ListCategory from './components/ListCategory'
 import CategoryDetail from './pages/layouts/Website/CategoryDetail'
+import CategoryAdd from './pages/layouts/Admin/Category/CategoryAdd'
 function App() {
   const [listLoading, setlistLoading] = useState(false)
   const [products, setProducts] = useState<ProductType[]>([])
@@ -71,6 +72,10 @@ function App() {
     }
     getCategory();
  },[])
+ const onHandleAddCate = async (category: CategoryType) => {
+  const {data} = await Add(category)
+  setCategories([...categories, data])
+}
 
  const onHandleRemoveCate = async (id: any) => {
   Remove(id);
@@ -113,6 +118,7 @@ function App() {
             </Route>
             <Route path='category' >
               <Route index element={<CategoryList categories={categories} onRemoveCate={onHandleRemoveCate} />}/>
+              <Route path='add' element={<CategoryAdd onAddCate={onHandleAddCate} />}/>
             </Route>
             <Route path='user' >
               <Route index element={<UserList users={users} />}/>
