@@ -71,6 +71,11 @@ function App() {
     }
     getCategory();
  },[])
+
+ const onHandleRemoveCate = async (id: any) => {
+  Remove(id);
+  setCategories(categories.filter(item => item._id !== id));
+}
  useEffect(() => {
   const getUser = async () => {
     const {data} = await ListUser();
@@ -107,7 +112,7 @@ function App() {
                  <Route path='add' element={<ProductAdd onAdd={onHandleAdd} />} />
             </Route>
             <Route path='category' >
-              <Route index element={<CategoryList categories={categories} />}/>
+              <Route index element={<CategoryList categories={categories} onRemoveCate={onHandleRemoveCate} />}/>
             </Route>
             <Route path='user' >
               <Route index element={<UserList users={users} />}/>

@@ -34,7 +34,7 @@ const ListProduct = ({ products }: ProductListProps) => {
            
 
             <div className='text-center py-2'>
-            <button className='border px-4 py-2 border-pink-400  text-pink-400 hover:bg-pink-400 hover:text-white rounded-full'><Link to='/product'>Xem tất cả</Link> </button>
+            <Link to='/product'><button className='border px-4 py-2 border-pink-400  text-pink-400 hover:bg-pink-400 hover:text-white rounded-full'>Xem tất cả</button></Link> 
             </div>
             
           </div>

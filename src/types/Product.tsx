@@ -5,6 +5,6 @@ export type ProductType = {
   quantity: number,
   description: string,
   descriptionDetail: string,
-  category: string
+  category: object
 
 }

@@ -11,7 +11,7 @@ type Inputs = {
   quantity: number,
   description: string,
   descriptionDetail: string,
-  category: string
+  category: object
 }
 type ProductAddProps = {
   onAdd: (product: Inputs) => void
