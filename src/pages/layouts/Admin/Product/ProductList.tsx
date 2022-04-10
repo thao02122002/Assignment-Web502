@@ -80,6 +80,7 @@ const ProductList = (props: ProductListProps) => {
     </div>
   </div>
   <Link className='pt-4' to='/admin/product/add'><button className='border px-4 py-2 border-pink-400  text-pink-400 hover:bg-pink-400 hover:text-white rounded-full'>Thêm sản phẩm</button></Link>
+  
 
 </div>
   )
