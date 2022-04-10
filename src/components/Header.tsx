@@ -7,6 +7,10 @@ import Search from './Search'
 type Props = {}
 
 const Header = (props: Props) => {
+  const logout = () => {
+    localStorage.removeItem('user');
+    
+  }
   return (
     <div className='py-4 px-4'>
       <header>
@@ -16,7 +20,7 @@ const Header = (props: Props) => {
           </div>
           <div className='col-span-4 grid grid-cols-6 m-auto pl-16' >
 
-            
+
 
             {/* <div className='col-span-2 grid grid-cols-4'>
               <div className='col-span-1 '>
@@ -61,6 +65,22 @@ const Header = (props: Props) => {
 
               </div>
             </div>
+
+            <div className='col-span-2 grid grid-cols-4'>
+              <div className='col-span-1'>
+                <button onClick={() => logout()}><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                </svg></button>
+                
+
+              </div>
+              <div className='col-span-3 text-left'>
+                <p className='hover:text-pink-400'>Đăng xuất</p>
+
+              </div>
+            </div>
+
+
           </div>
         </div>
 
