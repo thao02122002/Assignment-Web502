@@ -1,11 +1,15 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from '../../../components/Header'
+import { isAuthenticate } from '../../../utils/localStorage'
 import Dashboard from './Dashboard'
+const user = isAuthenticate()
+
 
 type Props = {}
 
 const AdminLayout = (props: Props) => {
+  
   return (
     <div>
       <div className='grid grid-cols-12'>
@@ -31,7 +35,8 @@ const AdminLayout = (props: Props) => {
             </form>
           </div>
           <div className='col-span-5'>
-            <h2>Xin chào</h2>
+            <h2>Xin chào</h2><span>{user?.user.name}</span>
+            
           </div>
           </div>
           <div className="h-0.5 bg-pink-400 w-full my-5"> </div>
