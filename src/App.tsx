@@ -26,12 +26,14 @@ import Contact from './pages/layouts/Website/Contact'
 import Statistical from './pages/layouts/Admin/Statistical'
 import { CategoryType } from './types/Category'
 import CategoryList from './pages/layouts/Admin/Category/CategoryList'
-import { ListUser } from './api/user'
+import { ListUser, UpdateUser } from './api/user'
 import { UserType } from './types/user'
 import UserList from './pages/layouts/Admin/User/UserList'
 import ListCategory from './components/ListCategory'
 import CategoryDetail from './pages/layouts/Website/CategoryDetail'
 import CategoryAdd from './pages/layouts/Admin/Category/CategoryAdd'
+import CategoryEdit from './pages/layouts/Admin/Category/CategoryEdit'
+import UserEdit from './pages/layouts/Admin/User/UserEdit'
 function App() {
   const [listLoading, setlistLoading] = useState(false)
   const [products, setProducts] = useState<ProductType[]>([])
@@ -65,6 +67,8 @@ function App() {
     setProducts(products.filter(item => item._id !== id));
   }
 
+
+  //CATEGORY
   useEffect(() => {
     const getCategory = async () => {
       const {data} = await List();
@@ -81,6 +85,20 @@ function App() {
   Remove(id);
   setCategories(categories.filter(item => item._id !== id));
 }
+const onHandleUpdateCate = async (category: CategoryType) => {
+  try {
+    const {data} = await Update(category)
+    console.log(data);
+    
+    setCategories(categories.map(item => item._id === data._id ? category : item))
+    
+  } catch (error) {
+    
+  }
+}
+
+
+//USER
  useEffect(() => {
   const getUser = async () => {
     const {data} = await ListUser();
@@ -88,6 +106,16 @@ function App() {
   }
   getUser();
 },[])
+const onHandleUpdateUser = async (user: UserType) => {
+  try {
+    const {data} = await UpdateUser(user)
+    setUsers(users.map(item => item._id === data._id ? user : item))
+    
+  } catch (error) {
+    
+  }
+}
+
   return (
     <div className="App">
       <Routes>
@@ -118,10 +146,12 @@ function App() {
             </Route>
             <Route path='category' >
               <Route index element={<CategoryList categories={categories} onRemoveCate={onHandleRemoveCate} />}/>
+              <Route path='/admin/category/:id/edit' element={<CategoryEdit onUpdateCate={onHandleUpdateCate} />}/>
               <Route path='add' element={<CategoryAdd onAddCate={onHandleAddCate} />}/>
             </Route>
             <Route path='user' >
               <Route index element={<UserList users={users} />}/>
+              <Route path='/admin/user/:id/edit' element={<UserEdit onUpdateUser={onHandleUpdateUser}/>}/>
             </Route>
         </Route>
 

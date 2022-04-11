@@ -25,6 +25,10 @@ export const Read = (_id: string) => {
   const url = `/category/${_id}`
   return instance.get(url)
 }
+export const ReadCate = (_id: string) => {
+  const url = `/categories/${_id}`
+  return instance.get(url)
+}
 
 // update
 export const Update = (category: any) => {

@@ -10,7 +10,8 @@ type FormInput = {
   price: number,
   quantity: number,
   description: string,
-  descriptionDetail: string
+  descriptionDetail: string,
+  category: object
 }
 
 type ProductEditProps = {
@@ -27,6 +28,7 @@ const ProductEdit = (props: ProductEditProps) => {
     const getProduct = async () => {
       const { data} = await read(id)
       reset(data)
+      
     }
     getProduct()
   }, [])

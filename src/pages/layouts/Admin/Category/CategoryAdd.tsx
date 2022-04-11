@@ -6,12 +6,7 @@ import { CategoryType } from '../../../../types/Category'
 import { List } from '../../../../api/category'
 
 type Inputs = {
-  name: string,
-  price: number,
-  quantity: number,
-  description: string,
-  descriptionDetail: string,
-  category: object
+  name: string
 }
 type CategoryAddProps = {
   onAddCate: (product: Inputs) => void
@@ -42,7 +37,7 @@ const CategoryAdd = (props: CategoryAddProps) => {
 
 
     <div>
-      <h1 className="text-center hover:text-pink-400">PRODUCTADD</h1>
+      <h1 className="text-center hover:text-pink-400">CATEGORYADD</h1>
       <div>
         <div className="md:grid md:grid-cols-3 md:gap-6 text-left ">
           <div className="mt-5 md:mt-0 md:col-span-3">
