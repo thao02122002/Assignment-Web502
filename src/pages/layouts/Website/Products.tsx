@@ -16,7 +16,7 @@ const Products = (props: ProductsProps) => {
     <div>
       <div className='grid grid-cols-12 gap-2'>
         <div className='col-span-4 pl-8 pt-12'>
-          <div className='text-left'>
+          {/* <div className='text-left'>
             <h2>DANH MỤC</h2>
             <ul className='inline  '>
               <li><Link className='no-underline text-black' to="">dnknhugf</Link> </li>
@@ -26,8 +26,8 @@ const Products = (props: ProductsProps) => {
             </ul>
            
             
-          </div>
-          <div className='text-left py-4'>
+          </div> */}
+          <div className='text-left'>
           <h2>MỨC GIÁ</h2>
           <p>Dưới 100 000đ</p>
           <p>100 000đ - 300 000đ</p>

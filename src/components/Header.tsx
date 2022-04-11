@@ -40,7 +40,6 @@ const Header = (props: Props) => {
               </div>
             </div> */}
 
-
             <div className='col-span-2 grid grid-cols-4'>
               <div className='col-span-1'>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

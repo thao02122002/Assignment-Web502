@@ -4,7 +4,8 @@ import {UserType} from "../../../../types/user"
 
 
 type UserListProps = {
-  users: UserType[];
+  users: UserType[]
+
   // onRemove: (id: number) => void
   
 }
@@ -53,6 +54,7 @@ const UserList = (props: UserListProps) => {
             {item.email}
             </td>
             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              
             {item.role}
             </td>
             

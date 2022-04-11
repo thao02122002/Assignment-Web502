@@ -5,7 +5,7 @@ import {UserType} from '../../../../types/user'
 import {ReadUser} from '../../../../api/user'
 
 type Form = {
-  role: string,
+  role: number,
   name: string,
   email: string,
   password: string
